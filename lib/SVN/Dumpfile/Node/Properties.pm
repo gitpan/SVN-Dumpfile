@@ -2,7 +2,7 @@
 # Copyright (c) 2008 Martin Scharrer <martin@scharrer-online.de>
 # This is open source software under the GPL v3 or later.
 #
-# $Id: Properties.pm 100 2008-05-06 22:59:16Z martin $
+# $Id: Properties.pm 103 2008-10-14 21:11:21Z martin $
 ################################################################################
 package SVN::Dumpfile::Node::Properties;
 use IO::File;
@@ -12,7 +12,7 @@ use warnings;
 use Readonly;
 Readonly my $NL => chr(10);
 
-our $VERSION = do { '$Rev: 100 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
+our $VERSION = do { '$Rev: 103 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
 
 sub new {
     my $class = shift;

@@ -2,7 +2,7 @@
 # Copyright (c) 2008 Martin Scharrer <martin@scharrer-online.de>
 # This is open source software under the GPL v3 or later.
 #
-# $Id: Headers.pm 94 2008-05-05 12:30:01Z martin $
+# $Id: Headers.pm 103 2008-10-14 21:11:21Z martin $
 ################################################################################
 package SVN::Dumpfile::Node::Headers;
 use strict;
@@ -11,7 +11,7 @@ use Carp;
 use Readonly;
 Readonly my $NL => chr(10);
 
-our $VERSION = do { '$Rev: 94 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
+our $VERSION = do { '$Rev: 103 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
 
 my @SVNHEADER = qw(
     Revision-number

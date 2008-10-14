@@ -2,7 +2,7 @@
 # Copyright (c) 2008 Martin Scharrer <martin@scharrer-online.de>
 # This is open source software under the GPL v3 or later.
 #
-# $Id: Dumpfile.pm 101 2008-05-07 16:53:53Z mscharrer $
+# $Id: Dumpfile.pm 103 2008-10-14 21:11:21Z martin $
 ################################################################################
 package SVN::Dumpfile;
 use strict;
@@ -13,7 +13,7 @@ use Carp;
 use Readonly;
 Readonly my $NL => chr(10);
 
-our $VERSION = do { '$Rev: 101 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
+our $VERSION = do { '$Rev: 103 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
 
 sub new {
     my $arg = shift;

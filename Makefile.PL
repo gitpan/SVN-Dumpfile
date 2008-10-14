@@ -1,4 +1,5 @@
-use 5.006001;
+use 5.008001;
+use bytes;
 use ExtUtils::MakeMaker;
 
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
@@ -11,6 +12,8 @@ WriteMakefile(
         'Data::Dumper' => 2.121_08,
         'Digest::MD5'  => 2.36,
         'IO::File'     => 1.13,
+        'Date::Parse'  => 2.27,
+        'Readonly'     => 0,
     },
     (
         $] >= 5.005
