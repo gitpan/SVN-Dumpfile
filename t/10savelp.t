@@ -3,7 +3,7 @@ use warnings;
 
 use Test::More tests => 9;
 use IO::File;
-use File::Temp;
+use File::Temp qw( :seekable );
 
 use SVN::Dumpfile::Node::Properties;
 ok(1);

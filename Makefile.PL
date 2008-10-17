@@ -9,7 +9,7 @@ WriteMakefile(
     VERSION_FROM => 'lib/SVN/Dumpfile.pm',    # finds $VERSION
     PREREQ_PM    => {
         'Carp'         => 1.04,
-        'Data::Dumper' => 2.121_08,
+        'Data::Dumper' => 2.121,
         'Digest::MD5'  => 2.36,
         'IO::File'     => 1.13,
         'Date::Parse'  => 2.27,

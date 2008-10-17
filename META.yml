@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                SVN-Dumpfile
-version:             0.13.103
+version:             0.13.105
 abstract:            Perl extension to access and manipulate Subversion dumpfiles
 license:             ~
 author:              
@@ -9,7 +9,7 @@ generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
     Carp:                          1.04
-    Data::Dumper:                  2.12108
+    Data::Dumper:                  2.121
     Date::Parse:                   2.27
     Digest::MD5:                   2.36
     IO::File:                      1.13

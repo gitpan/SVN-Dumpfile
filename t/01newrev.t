@@ -4,7 +4,7 @@
 #########################
 
 use Test::More tests => 7;
-use File::Temp;
+use File::Temp qw( :seekable );
 use SVN::Dumpfile::Node;
 ok(1);
 
