@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                SVN-Dumpfile
-version:             0.13.105
+version:             0.13.106
 abstract:            Perl extension to access and manipulate Subversion dumpfiles
 license:             ~
 author:              
@@ -12,8 +12,10 @@ requires:
     Data::Dumper:                  2.121
     Date::Parse:                   2.27
     Digest::MD5:                   2.36
+    File::Temp:                    0.2
     IO::File:                      1.13
-    Readonly:                      0
+    IO::Handle:                    1.25
+    Readonly:                      1.03
 meta-spec:
     url:     http://module-build.sourceforge.net/META-spec-v1.3.html
     version: 1.3

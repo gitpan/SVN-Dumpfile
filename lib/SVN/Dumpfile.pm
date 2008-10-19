@@ -13,7 +13,7 @@ use Carp;
 use Readonly;
 Readonly my $NL => chr(10);
 
-our $VERSION = do { '$Rev: 105 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
+our $VERSION = do { '$Rev: 106 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
 
 
 sub new {

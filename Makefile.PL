@@ -12,8 +12,10 @@ WriteMakefile(
         'Data::Dumper' => 2.121,
         'Digest::MD5'  => 2.36,
         'IO::File'     => 1.13,
+        'IO::Handle'   => 1.25,
+        'File::Temp'   => 0.20,
         'Date::Parse'  => 2.27,
-        'Readonly'     => 0,
+        'Readonly'     => 1.03,
     },
     (
         $] >= 5.005
