@@ -2,7 +2,7 @@
 # Copyright (c) 2008 Martin Scharrer <martin@scharrer-online.de>
 # This is open source software under the GPL v3 or later.
 #
-# $Id: Dumpfile.pm 105 2008-10-17 07:55:06Z martin $
+# $Id: Dumpfile.pm 107 2009-04-23 11:45:00Z martin $
 ################################################################################
 package SVN::Dumpfile;
 use strict;
@@ -13,7 +13,7 @@ use Carp;
 use Readonly;
 Readonly my $NL => chr(10);
 
-our $VERSION = do { '$Rev: 106 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
+our $VERSION = do { '$Rev: 107 $' =~ /\$Rev: (\d+) \$/; '0.13' . ".$1" };
 
 
 sub new {
@@ -273,18 +273,27 @@ sub open {
     }
 
     if ( $self->{'SVN-fs-dump-format-version'} > 1 ) {
-        while ( ( $line = $fh->getline ) =~ /^$/ ) { }
-        if ( $line =~ /^UUID: (.*)$/ ) {
-            $self->{'UUID'} = $1;
+        my $char;
+        while ( ( $char = $fh->getc ) eq "\012" ) { }
+        if ( $char eq 'U' ) {
+            $line = $char . $fh->getline;
+            if ( $line =~ /^UUID: (.*)$/ ) {
+                $self->{'UUID'} = $1;
+
+                # read blank line after UUID:
+                $char = $fh->getc;
+                $fh->ungetc( ord $char ) if ( $char ne "\012" );
+            }
+            else {
+                carp "Error: Dumpfile looks invalid. Couldn't find valid ",
+                "'UUID' header.\n";
+            }
         }
         else {
             carp "Error: Dumpfile looks invalid. Couldn't find valid ",
-                "'UUID' header.\n";
+            "'UUID' header.\n";
+            $fh->ungetc( ord $char );
         }
-
-        # read blank line after UUID:
-        my $c = $fh->getc;
-        $fh->ungetc( ord $c ) if ( $c ne $NL );
     }
 
     IO::Handle->input_record_separator($irs);
